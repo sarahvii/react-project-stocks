@@ -16,7 +16,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const stocksRouter = createRouter(stocksCollection);
     app.post('/api/stocks', (req, res) => {
       const newData = req.body;
-      if (newData.hasOwnProperty('name') && newData.hasOwnProperty('email')) {
+      if (newData.hasOwnProperty('name')) {
         stocksCollection
           .insertOne(newData)
           .then(result => {
