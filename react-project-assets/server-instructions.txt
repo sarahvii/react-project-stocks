@@ -1,0 +1,28 @@
+Local server instructions...
+
+Make sure you have a local server process running for mongo using the terminal command mongod
+Then in a new tab in terminal run mongosh to run the shell
+Type show dbs to see all local databases
+
+
+Once you clone the server folder, cd into the root and run the following:
+npm install
+npm run seeds
+npm run server:dev
+
+
+to test the api calls you can do this in the browser or in Insomnia of Thunder Client in VSCode...
+I've included screenshots for you to reference
+
+get all stocks (GET)
+http://localhost:9000/api/stocks/
+
+get stock by id (GET)
+http://localhost:9000/api/stocks/644c1cbbe3f2ac716fc53c4e
+
+update stock by id - (PUT)
+http://localhost:9000/api/stocks/644c1cbbe3f2ac716fc53c4e
+
+delete stock by id (DELETE)
+http://localhost:9000/api/stocks/644c1cbbe3f2ac716fc53c4e
+

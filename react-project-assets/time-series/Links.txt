@@ -1,0 +1,16 @@
+Find trading symbols for companies...
+https://stockanalysis.com/stocks/ 
+
+Alphavantage API Links...
+
+time series for Tesla
+https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=TSLA&apikey=SQFHJEETBG9RZHNR
+
+time series for Apple
+https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=AAPL&apikey=SQFHJEETBG9RZHNR
+
+time series for Electronic Arts
+https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=EA&apikey=SQFHJEETBG9RZHNR
+
+time series for Net Ease
+https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=NTES&apikey=SQFHJEETBG9RZHNR
