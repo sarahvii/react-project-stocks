@@ -1,6 +1,6 @@
-const StockList = () => {
+const StockList = ({stockNodes}) => {
     return ( 
-        <p>StockList</p>
+        <ul>{stockNodes}</ul>
      );
 }
  
