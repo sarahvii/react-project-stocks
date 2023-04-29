@@ -22,7 +22,7 @@ db.stocks.insertMany(
 },
 {
   name: 'NetEase, Inc.',
-  symbol: 'NTES, Inc.',
+  symbol: 'NTES',
   date_purchased: '7/8/2022',
   holdings: 80,
 },
