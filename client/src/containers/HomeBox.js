@@ -6,11 +6,9 @@ import StockDetailsList from "../components/StockDetailsList";
 import StockList from "../components/StockList";
 import StockItem from "../components/StockItem";
 
-const HomeBox = ({portfolioStocks}) => {
+const HomeBox = ({portfolioStocks, selectedStock, setSelectedStock}) => {
 
-    const stockNodes = portfolioStocks.map((portfolioStock) => {
-        return <StockItem portfolioStock={portfolioStock} key={portfolioStock._id} />
-    })
+
 
     return ( 
         <>
@@ -19,7 +17,7 @@ const HomeBox = ({portfolioStocks}) => {
             <Search></Search>
             <Chart></Chart>
             <NewsPanel></NewsPanel>
-            <StockList stockNodes={stockNodes}></StockList>
+            <StockList portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}></StockList>
             <hr></hr>
         </>
      );
