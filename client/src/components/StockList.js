@@ -1,6 +1,10 @@
 const StockList = ({stockNodes}) => {
     return ( 
-        <ul>{stockNodes}</ul>
+        <>
+            <h3>Portfolio:</h3>
+            <ul>{stockNodes}</ul>
+        </>
+
      );
 }
  
