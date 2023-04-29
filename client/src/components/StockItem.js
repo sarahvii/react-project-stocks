@@ -1,6 +1,8 @@
-const StockItem = () => {
+const StockItem = ({portfolioStock}) => {
+    console.log("Portfolio stock in StockItem:", portfolioStock);
+
     return ( 
-        <p>StockItem</p>
+        <p>{portfolioStock.name}</p>
      );
 }
  

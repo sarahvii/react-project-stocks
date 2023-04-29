@@ -6,9 +6,18 @@ import StockDetailsList from "../components/StockDetailsList";
 import StockList from "../components/StockList";
 import StockItem from "../components/StockItem";
 
-const HomeBox = () => {
+const HomeBox = ({portfolioStocks}) => {
 
-    
+    console.log("Portfolio stocks:", portfolioStocks);
+
+
+    const stockNodes = portfolioStocks.map((portfolioStock) => {
+        console.log("Mapping portfolio stock:", portfolioStock);
+        return <StockItem portfolioStock={portfolioStock} key={portfolioStock._id} />
+    })
+
+    console.log("Stock nodes:", stockNodes);
+
     return ( 
         <>
             <p>Homebox</p>
@@ -17,8 +26,12 @@ const HomeBox = () => {
             <Chart></Chart>
             <NewsPanel></NewsPanel>
             <StockList>
-                <StockItem></StockItem>
+                {stockNodes}
             </StockList>
+            <ul>
+                {stockNodes}
+            </ul>
+
 
             <hr></hr>
         </>
