@@ -7,6 +7,8 @@ import StockList from "../components/StockList";
 import StockItem from "../components/StockItem";
 
 const HomeBox = () => {
+
+    
     return ( 
         <>
             <p>Homebox</p>
