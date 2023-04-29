@@ -5,10 +5,14 @@ import BuyPanel from "../components/BuyPanel";
 import NewsPanel from "../components/NewsPanel";
 import StockDetailsItem from "../components/StockDetailsItem";
 
-const StockBox = () => {
+const StockBox = ({selectedStock}) => {
+    if (!selectedStock){
+        return <p>No Stock Selected</p>
+    }
     return ( 
         <>
             <p>StockBox</p> 
+            {selectedStock.name}
             <Nav></Nav>
             <Search></Search>
             <Chart></Chart>

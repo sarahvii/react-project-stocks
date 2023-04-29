@@ -7,6 +7,7 @@ import PortfolioStocksService from './PortfolioStocksServices';
 function App() {
 
   const [portfolioStocks, setPortfolioStocks] = useState([])
+  const [selectedStock, setSelectedStock] = useState(null)
 
   useEffect(() => {
     PortfolioStocksService.getPortfolioStocks()
@@ -16,9 +17,9 @@ function App() {
   return (
     <div className="App">
       <h1>App</h1>
-      <HomeBox portfolioStocks={portfolioStocks}></HomeBox>
+      <HomeBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}></HomeBox>
       <PortfolioBox></PortfolioBox>
-      <StockBox></StockBox>
+      <StockBox selectedStock={selectedStock}></StockBox>
     </div>
   );
 }
