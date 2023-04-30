@@ -5,9 +5,6 @@ const BuyPanel = ({ selectedStock }) => {
 
     const [holdings, setHoldings] = useState(0)
 
-
-    
-
     const handleHoldingsChange = (event) => setHoldings(event.target.value);
 
     const handleSubmit = event => {
