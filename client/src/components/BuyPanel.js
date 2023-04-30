@@ -73,6 +73,12 @@ const BuyPanel = () => {
 // should this instead render in StockBox?
 // Figure out how to render name of stock
 
+// Speak to Paul about rendering of portfolio stocks details in StockBox.
+
+// Link to DB.
+
+// The number of stocks is not linked to the name of the stock - how do we link these?
+
 
 
 
