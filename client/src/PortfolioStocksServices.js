@@ -14,8 +14,19 @@ const PortfolioStocksService =  {
         'Content-Type': 'application/json'
       }
     })
-      .then(res => res.json());
-  },
+      .then(res => {
+        if (!res.ok) {
+          console.error('Server returned an error:', res.status, res.statusText);
+          return res.text().then(text => {
+            console.error('Response body:', text);
+            throw new Error('Server returned an error');
+          });
+        }
+        
+        
+        return res.json();
+  });
+},
 
   updatePortfolioStock(stock) {
     return fetch(baseURL + stock._id, {

@@ -1,31 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+// import { addPortfolioStock } from PortfolioStocksService;
+import PortfolioStocksService from '../PortfolioStocksServices';
 
-const BuyPanel = () => {
+const BuyPanel = ( { addHolding }) => {
 
-    const [holdingsPurchased, setHoldingsPurchased] = useState("");
+    const [holdingsPurchased, setHoldingsPurchased] = useState({
+        name: "",
+        symbol: "",
+        date_purchased: "",
+        holdings: "",
+    });
     const [showHoldingsPurchased, setShowHoldingsPurchased] = useState({show: false, holdings: ""});
 
-    const handleButtonClick = () => {
-        console.log('Button has been clicked') // can be removed
-        setShowHoldingsPurchased({show:true, holdings: holdingsPurchased});
-    };
+    // const handleButtonClick = () => {
+    //     console.log('Button has been clicked') // can be removed
+    //     setShowHoldingsPurchased({show:true, holdings: holdingsPurchased});
+    // }; // is this section just duplicating information. should this instead all be via onSubmit?
 
-    const handleFormSubmit = function (event) {
+    const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log(event.target.holdings.value);
-        const holdingsPurchasedToSubmit = holdingsPurchased.trim();
+        const holdingsPurchasedToSubmit = holdingsPurchased.holdings.trim();
         if (!holdingsPurchasedToSubmit) {
-            return
+            return;
         }
-        setHoldingsPurchased("");
-        setShowHoldingsPurchased({show:true, holdings: holdingsPurchased}); // This doesn't work properly from constHoldingsPurchasedToSubmit to here.
+
+        PortfolioStocksService.addPortfolioStock(holdingsPurchasedToSubmit)
+        .then((response) => {
+            setHoldingsPurchased("");
+            setShowHoldingsPurchased({ show:true, holdings: response.holdings });
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    
+    };
+
+
+  // This doesn't work properly from constHoldingsPurchasedToSubmit to here.
 
         // TODO: Update Text in StockBox -- ?? or in Buy Panel
   
-    };
+
 
     const handleHoldingsPurchasedChange = (event) => {
-        setHoldingsPurchased(event.target.value);
+        const newHoldingsPurchased = Object.assign({}, holdingsPurchased);
+        newHoldingsPurchased[event.target.name] = event.target.value;
+        setHoldingsPurchased(newHoldingsPurchased);
 
     };
 
@@ -51,16 +72,14 @@ const BuyPanel = () => {
                 type="text" 
                 placeholder="0" 
                 name="holdings" 
-                value={holdingsPurchased}
+                value={holdingsPurchased.holdings}
                 onChange={handleHoldingsPurchasedChange}
-                onSubmit={handleFormSubmit}
                 /> 
             </label>
-        <button id="buy_button" onClick={handleButtonClick}>Buy</button>
+            <button type="submit">Buy</button>
         </form>
         {showHoldingsPurchased.show && <p>You have purchased {showHoldingsPurchased.holdings} holdings of.</p>}
         </>
-        // what is onSubmit doing?  Is the submission activating through useEffect??
     );
 
 };
