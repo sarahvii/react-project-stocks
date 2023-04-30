@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom' ;
+
 import HomeBox from './containers/HomeBox';
 import PortfolioBox from './containers/PortfolioBox';
 import StockBox from './containers/StockBox';
@@ -9,15 +11,15 @@ function App() {
   const [selectedStock, setSelectedStock] = useState(null);
   const [globalSelectedStockData, setGlobalSelectedStockData] = useState(null);
 
-  // useEffect(() => {
-  //   PortfolioStocksService.getPortfolioStocks()
-  //     .then(portfolioStocks => setPortfolioStocks(portfolioStocks));
-  // }, []); 
+  useEffect(() => {
+    PortfolioStocksService.getPortfolioStocks()
+      .then(portfolioStocks => setPortfolioStocks(portfolioStocks));
+  }, []); 
 
-  // useEffect(() => {
-  //   PortfolioStocksService.getPortfolioStocks()
-  //     .then(newPortfolioStocks => setPortfolioStocks(newPortfolioStocks));
-  // }, [() => portfolioStocks]);
+  useEffect(() => {
+    PortfolioStocksService.getPortfolioStocks()
+      .then(newPortfolioStocks => setPortfolioStocks(newPortfolioStocks));
+  }, [() => portfolioStocks]);
 
   const fetchPortfolioStocks = useCallback(() => {
     PortfolioStocksService.getPortfolioStocks()
@@ -42,9 +44,11 @@ function App() {
   return (
     <div className="App">
       <h1>App</h1>
-      <HomeBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}></HomeBox>
-      <PortfolioBox></PortfolioBox>
-      <StockBox selectedStock={selectedStock} globalSelectedStockData={globalSelectedStockData} fetchGlobalSelectedStockData={fetchGlobalSelectedStockData} setGlobalSelectedStockData={setGlobalSelectedStockData}></StockBox>
+      <Routes>
+          <Route exact path="/" element={<HomeBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>} />
+          <Route path="/portfolio" element={<PortfolioBox/>} />
+          <Route path="/stocks" element={<StockBox selectedStock={selectedStock} globalSelectedStockData={globalSelectedStockData} fetchGlobalSelectedStockData={fetchGlobalSelectedStockData} setGlobalSelectedStockData={setGlobalSelectedStockData}/>} />
+      </Routes>
     </div>
   );
 }
