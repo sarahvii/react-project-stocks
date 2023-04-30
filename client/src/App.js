@@ -9,10 +9,24 @@ function App() {
   const [selectedStock, setSelectedStock] = useState(null);
   const [globalSelectedStockData, setGlobalSelectedStockData] = useState(null);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   PortfolioStocksService.getPortfolioStocks()
+  //     .then(portfolioStocks => setPortfolioStocks(portfolioStocks));
+  // }, []); 
+
+  // useEffect(() => {
+  //   PortfolioStocksService.getPortfolioStocks()
+  //     .then(newPortfolioStocks => setPortfolioStocks(newPortfolioStocks));
+  // }, [() => portfolioStocks]);
+
+  const fetchPortfolioStocks = useCallback(() => {
     PortfolioStocksService.getPortfolioStocks()
-      .then(portfolioStocks => setPortfolioStocks(portfolioStocks));
+      .then(newPortfolioStocks => setPortfolioStocks(newPortfolioStocks));
   }, []);
+  
+  useEffect(() => {
+    fetchPortfolioStocks();
+  }, [fetchPortfolioStocks]);
 
   const fetchGlobalSelectedStockData = useCallback((symbol) => {
     console.log(`Fetching global quote data for ${symbol}...`);
