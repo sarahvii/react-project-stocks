@@ -3,10 +3,7 @@ import PortfolioStocksService from '../PortfolioStocksServices';
 
 const BuyPanel = ({ selectedStock }) => {
 
-    const [name, setName] = useState("");
-    const [symbol, setSymbol] = useState("");
-    const [date_purchased, setDate_Purchased] = useState("")
-    const [holdings, setHoldings] = useState("")
+    const [holdings, setHoldings] = useState(0)
 
 
     
@@ -19,12 +16,10 @@ const BuyPanel = ({ selectedStock }) => {
             name: selectedStock.name,
             symbol: selectedStock.symbol,
             date_purchased: selectedStock.date_purchased,
-            holdings: holdings
+            holdings: parseInt(holdings)
         });
-        setName("");
-        setSymbol("");
-        setDate_Purchased("");
-        setHoldings("");
+
+        setHoldings(0);
     }
 
     return (
@@ -33,8 +28,8 @@ const BuyPanel = ({ selectedStock }) => {
         <form id="buy_form" onSubmit={handleSubmit}>
             <label>Amount to buy:
                 <input 
-                type="text" 
-                placeholder="0" 
+                type="number" 
+                placeholder="0"
                 name="holdings" 
                 value={holdings}
                 onChange={handleHoldingsChange}
