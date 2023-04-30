@@ -29,7 +29,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
           });
       } else {
         res.status(400); // bad request
-        res.send('please make sure booking has email and name');
+        res.send('please make sure booking has email and name'); // text needs to be amended
       }
     });
 

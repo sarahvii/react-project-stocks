@@ -34,7 +34,7 @@ const StockBox = ({ selectedStock, globalSelectedStockData, fetchGlobalSelectedS
       <Nav />
       <Search />
       <Chart />
-      <BuyPanel />
+      <BuyPanel selectedStock={selectedStock}/>
       <NewsPanel />
       {error ? (
         <p>Error: {error.message}</p>
