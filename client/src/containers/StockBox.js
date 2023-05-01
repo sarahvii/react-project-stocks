@@ -7,21 +7,8 @@ import BuyPanel from '../components/BuyPanel';
 import NewsPanel from '../components/NewsPanel';
 import StockDetailsItem from '../components/StockDetailsItem';
 
-const StockBox = ({ selectedStock, globalSelectedStockData, fetchGlobalSelectedStockData, setGlobalSelectedStockData }) => {
+const StockBox = ({ selectedStock, globalSelectedStockData }) => {
   const [error, setError] = useState(null);
-
-  // useEffect(() => {
-  //   if (selectedStock) {
-  //     fetchGlobalSelectedStockData(selectedStock.symbol);
-  //   }
-  // }, [selectedStock, fetchGlobalSelectedStockData]);
-
-  // useEffect(() => {
-  //   if (!selectedStock) {
-  //     setGlobalSelectedStockData(null);
-  //     setError(null);
-  //   }
-  // }, [selectedStock]);
 
   if (!selectedStock) {
     return (
