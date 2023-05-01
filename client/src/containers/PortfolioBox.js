@@ -3,10 +3,10 @@ import Chart from "../components/Chart";
 import Search from "../components/Search";
 import NewsPanel from "../components/NewsPanel";
 import PieChart from "../components/PieChart";
-import StockDetailsItem from "../components/StockDetailsItem";
-import StockDetailsList from "../components/StockDetailsList";
+import StockList from "../components/StockList";
+import StockItem from "../components/StockItem";
 
-const PortfolioBox = () => {
+const PortfolioBox = ({portfolioStocks, selectedStock, setSelectedStock}) => {
     return ( 
         <>
             <p>PortfolioBox</p>
@@ -14,9 +14,9 @@ const PortfolioBox = () => {
             <Search></Search>
             <PieChart></PieChart>
             <NewsPanel></NewsPanel>
-            <StockDetailsList>
-                <StockDetailsItem></StockDetailsItem>
-            </StockDetailsList>
+            <StockList portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}></StockList>
+
+
 
             <hr></hr>
 

@@ -13,8 +13,6 @@ const StockList = ({portfolioStocks, selectedStock, setSelectedStock}) => {
 
     const HardcodedPrice = 150
 
-
-
     const stockNodes = portfolioStocks.map((portfolioStock, index) => {
         // const currentPrice = hardcodedApiData[index].currentPrice;
         const currentPrice = HardcodedPrice
