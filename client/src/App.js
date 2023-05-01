@@ -11,25 +11,26 @@ function App() {
   const [selectedStock, setSelectedStock] = useState(null);
   const [globalSelectedStockData, setGlobalSelectedStockData] = useState(null);
 
-  useEffect(() => {
-    PortfolioStocksService.getPortfolioStocks()
-      .then(portfolioStocks => setPortfolioStocks(portfolioStocks));
-  }, []); 
+  // useEffect(() => {
+  //   PortfolioStocksService.getPortfolioStocks()
+  //     .then(portfolioStocks => setPortfolioStocks(portfolioStocks));
+  // }, [portfolioStocks]); 
+
 
   useEffect(() => {
+    let isMounted = true;
     PortfolioStocksService.getPortfolioStocks()
-      .then(newPortfolioStocks => setPortfolioStocks(newPortfolioStocks));
-  }, [() => portfolioStocks]);
+      .then(portfolioStocks => {
+        if (isMounted) {
+          setPortfolioStocks(portfolioStocks);
+        }
+      });
+    return () => {
+      isMounted = false;
+    };
+  }, [setPortfolioStocks]);
 
-  const fetchPortfolioStocks = useCallback(() => {
-    PortfolioStocksService.getPortfolioStocks()
-      .then(newPortfolioStocks => setPortfolioStocks(newPortfolioStocks));
-  }, []);
-  
-  useEffect(() => {
-    fetchPortfolioStocks();
-  }, [fetchPortfolioStocks]);
-
+//this is just a test api, to be replaced by actual api call
   const fetchGlobalSelectedStockData = useCallback((symbol) => {
     console.log(`Fetching global quote data for ${symbol}...`);
     // make an api call to get a global quote data for a selected stock
