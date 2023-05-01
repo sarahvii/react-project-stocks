@@ -51,7 +51,7 @@ function App() {
       <h1>App</h1>
       <Routes>
           <Route exact path="/" element={<HomeBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>} />
-          <Route path="/portfolio" element={<PortfolioBox/>} />
+          <Route path="/portfolio" element={<PortfolioBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>} />
           <Route path="/stocks" element={<StockBox selectedStock={selectedStock} globalSelectedStockData={globalSelectedStockData} fetchGlobalSelectedStockData={fetchGlobalSelectedStockData} setGlobalSelectedStockData={setGlobalSelectedStockData} addStock={addStock}/>} />
       </Routes>
     </div>

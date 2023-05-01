@@ -6,7 +6,7 @@ import StockDetailsList from "../components/StockDetailsList";
 import StockList from "../components/StockList";
 import StockItem from "../components/StockItem";
 
-const HomeBox = ({portfolioStocks, selectedStock, setSelectedStock}) => {
+const HomeBox = ({}) => {
 
 
 
@@ -17,7 +17,6 @@ const HomeBox = ({portfolioStocks, selectedStock, setSelectedStock}) => {
             <Search></Search>
             <Chart></Chart>
             <NewsPanel></NewsPanel>
-            <StockList portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}></StockList>
             <hr></hr>
         </>
      );
