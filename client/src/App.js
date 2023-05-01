@@ -15,13 +15,15 @@ function App() {
     PortfolioStocksService.getPortfolioStocks()
       .then(portfolioStocks => setPortfolioStocks(portfolioStocks));
   }, []); 
+  
 
-  const addStock = (selectedStock, holdings) => {
+  const addStock = (selectedStock, holdings, hardcodedCurrentPrice) => {
     PortfolioStocksService.addPortfolioStock({
       name: selectedStock.name,
       symbol: selectedStock.symbol,
       date_purchased: selectedStock.date_purchased,
-      holdings: parseInt(holdings)
+      holdings: parseInt(holdings),
+      price_purchased: hardcodedCurrentPrice,
   })
   .then(() => {
       PortfolioStocksService.getPortfolioStocks()
@@ -31,18 +33,6 @@ function App() {
   }
 
 
-  // useEffect(() => {
-  //   let isMounted = true;
-  //   PortfolioStocksService.getPortfolioStocks()
-  //     .then(portfolioStocks => {
-  //       if (isMounted) {
-  //         setPortfolioStocks(portfolioStocks);
-  //       }
-  //     });
-  //   return () => {
-  //     isMounted = false;
-  //   };
-  // }, [setPortfolioStocks]);
 
 //this is just a test api, to be replaced by actual api call
   const fetchGlobalSelectedStockData = useCallback((symbol) => {
