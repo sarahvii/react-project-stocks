@@ -11,24 +11,38 @@ function App() {
   const [selectedStock, setSelectedStock] = useState(null);
   const [globalSelectedStockData, setGlobalSelectedStockData] = useState(null);
 
-  // useEffect(() => {
-  //   PortfolioStocksService.getPortfolioStocks()
-  //     .then(portfolioStocks => setPortfolioStocks(portfolioStocks));
-  // }, [portfolioStocks]); 
-
-
   useEffect(() => {
-    let isMounted = true;
     PortfolioStocksService.getPortfolioStocks()
-      .then(portfolioStocks => {
-        if (isMounted) {
-          setPortfolioStocks(portfolioStocks);
-        }
-      });
-    return () => {
-      isMounted = false;
-    };
-  }, [setPortfolioStocks]);
+      .then(portfolioStocks => setPortfolioStocks(portfolioStocks));
+  }, []); 
+
+  const addStock = (selectedStock, holdings) => {
+    PortfolioStocksService.addPortfolioStock({
+      name: selectedStock.name,
+      symbol: selectedStock.symbol,
+      date_purchased: selectedStock.date_purchased,
+      holdings: parseInt(holdings)
+  })
+  .then(() => {
+      PortfolioStocksService.getPortfolioStocks()
+      .then(portfolioStocks => setPortfolioStocks(portfolioStocks));
+  })
+
+  }
+
+
+  // useEffect(() => {
+  //   let isMounted = true;
+  //   PortfolioStocksService.getPortfolioStocks()
+  //     .then(portfolioStocks => {
+  //       if (isMounted) {
+  //         setPortfolioStocks(portfolioStocks);
+  //       }
+  //     });
+  //   return () => {
+  //     isMounted = false;
+  //   };
+  // }, [setPortfolioStocks]);
 
 //this is just a test api, to be replaced by actual api call
   const fetchGlobalSelectedStockData = useCallback((symbol) => {
@@ -48,7 +62,7 @@ function App() {
       <Routes>
           <Route exact path="/" element={<HomeBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>} />
           <Route path="/portfolio" element={<PortfolioBox/>} />
-          <Route path="/stocks" element={<StockBox selectedStock={selectedStock} globalSelectedStockData={globalSelectedStockData} fetchGlobalSelectedStockData={fetchGlobalSelectedStockData} setGlobalSelectedStockData={setGlobalSelectedStockData}/>} />
+          <Route path="/stocks" element={<StockBox selectedStock={selectedStock} globalSelectedStockData={globalSelectedStockData} fetchGlobalSelectedStockData={fetchGlobalSelectedStockData} setGlobalSelectedStockData={setGlobalSelectedStockData} addStock={addStock}/>} />
       </Routes>
     </div>
   );

@@ -7,7 +7,9 @@ import BuyPanel from '../components/BuyPanel';
 import NewsPanel from '../components/NewsPanel';
 import StockDetailsItem from '../components/StockDetailsItem';
 
-const StockBox = ({ selectedStock, globalSelectedStockData }) => {
+
+const StockBox = ({ selectedStock, globalSelectedStockData, addStock }) => {
+
   const [error, setError] = useState(null);
 
   if (!selectedStock) {
@@ -26,7 +28,7 @@ const StockBox = ({ selectedStock, globalSelectedStockData }) => {
       <Nav />
       <Search />
       <Chart />
-      <BuyPanel selectedStock={selectedStock}/>
+      <BuyPanel selectedStock={selectedStock} addStock={addStock}/>
       <NewsPanel />
       {error ? (
         <p>Error: {error.message}</p>
