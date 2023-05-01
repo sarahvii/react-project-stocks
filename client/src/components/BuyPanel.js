@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PortfolioStocksService from '../PortfolioStocksServices';
 
-const BuyPanel = ({ selectedStock }) => {
+const BuyPanel = ({ selectedStock, addStock }) => {
 
     const [holdings, setHoldings] = useState(0)
 
@@ -9,13 +9,7 @@ const BuyPanel = ({ selectedStock }) => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        PortfolioStocksService.addPortfolioStock({
-            name: selectedStock.name,
-            symbol: selectedStock.symbol,
-            date_purchased: selectedStock.date_purchased,
-            holdings: parseInt(holdings)
-        });
-
+        addStock(selectedStock, holdings)
         setHoldings(0);
     }
 

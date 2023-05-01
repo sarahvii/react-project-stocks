@@ -7,7 +7,7 @@ import BuyPanel from '../components/BuyPanel';
 import NewsPanel from '../components/NewsPanel';
 import StockDetailsItem from '../components/StockDetailsItem';
 
-const StockBox = ({ selectedStock, globalSelectedStockData, fetchGlobalSelectedStockData, setGlobalSelectedStockData }) => {
+const StockBox = ({ selectedStock, globalSelectedStockData, addStock }) => {
   const [error, setError] = useState(null);
 
   // useEffect(() => {
@@ -39,7 +39,7 @@ const StockBox = ({ selectedStock, globalSelectedStockData, fetchGlobalSelectedS
       <Nav />
       <Search />
       <Chart />
-      <BuyPanel selectedStock={selectedStock}/>
+      <BuyPanel selectedStock={selectedStock} addStock={addStock}/>
       <NewsPanel />
       {error ? (
         <p>Error: {error.message}</p>
