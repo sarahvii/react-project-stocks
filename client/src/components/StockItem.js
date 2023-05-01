@@ -22,7 +22,7 @@ const StockItem = ({portfolioStock, selectedStock, setSelectedStock, currentPric
     }
 
     const calculateHoldingsValue = (portfolioStock) => {
-        let holdingsValue = (portfolioStock.holdings * currentPrice)
+        let holdingsValue = portfolioStock.holdings * currentPrice
         return holdingsValue
     }
 

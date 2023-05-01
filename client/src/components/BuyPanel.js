@@ -7,9 +7,12 @@ const BuyPanel = ({ selectedStock, addStock }) => {
 
     const handleHoldingsChange = (event) => setHoldings(event.target.value);
 
+    const hardcodedCurrentPrice = 100
+
+
     const handleSubmit = event => {
         event.preventDefault();
-        addStock(selectedStock, holdings)
+        addStock(selectedStock, holdings, hardcodedCurrentPrice)
         setHoldings(0);
     }
 
