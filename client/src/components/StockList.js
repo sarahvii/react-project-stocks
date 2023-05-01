@@ -2,10 +2,19 @@ import StockItem from "./StockItem"
 
 const StockList = ({portfolioStocks, selectedStock, setSelectedStock}) => {
 
+    const hardcodedApiData = [
+        {currentPrice: 169.59},
+        {currentPrice: 126.09},
+        {currentPrice: 161.78},
+        {currentPrice: 89.03},
+        {currentPrice: 127.42}    
+    ]
 
 
-    const stockNodes = portfolioStocks.map((portfolioStock) => {
-        return <StockItem portfolioStock={portfolioStock} key={portfolioStock._id} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>
+
+    const stockNodes = portfolioStocks.map((portfolioStock, index) => {
+        const currentPrice = hardcodedApiData[index].currentPrice;
+        return <StockItem portfolioStock={portfolioStock} key={portfolioStock._id} selectedStock={selectedStock} setSelectedStock={setSelectedStock} currentPrice={currentPrice}/>
     })
 
     return ( 
