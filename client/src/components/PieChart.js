@@ -1,6 +1,6 @@
 const PieChart = () => {
     return ( 
-        <p>PieChart</p>
+        <p>This is where the pie chart goes.</p>
      );
 }
  

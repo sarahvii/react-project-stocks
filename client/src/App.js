@@ -5,6 +5,9 @@ import HomeBox from './containers/HomeBox';
 import PortfolioBox from './containers/PortfolioBox';
 import StockBox from './containers/StockBox';
 import PortfolioStocksService from './PortfolioStocksServices';
+import styled from 'styled-components';
+
+
 
 function App() {
   const [portfolioStocks, setPortfolioStocks] = useState([]);
@@ -34,15 +37,22 @@ function App() {
 
 
   return (
-    <div className="App">
-      <h1>App</h1>
+    <AppContainer className="App">
       <Routes>
           <Route exact path="/" element={<HomeBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>} />
           <Route path="/portfolio" element={<PortfolioBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>} />
           <Route path="/stocks" element={<StockBox selectedStock={selectedStock} addStock={addStock}/>} />
       </Routes>
-    </div>
+    </AppContainer>
   );
 }
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+`
 
 export default App;
