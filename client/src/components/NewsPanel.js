@@ -32,14 +32,15 @@ const NewsPanel = () => {
 
   return (
     <>
+    <NewsPanelContainer>
       <h1>News</h1>
       {/* <button onClick={handleGetNews}>Fetch</button> */}
       <NewsList>
       {data.map((item, idx) => (
         <NewsItem key={idx}>
           <h3>{item.title}</h3>
-          <h5>Sentiment: {item.overall_sentiment_label}</h5>
-          <h5>Sentiment Score: {item.overall_sentiment_score}</h5>
+          {/* <h5>Sentiment: {item.overall_sentiment_label}</h5>
+          <h5>Sentiment Score: {item.overall_sentiment_score}</h5> */}
           <a href={item.url}>
             <img
               src={item.banner_image}
@@ -54,20 +55,61 @@ const NewsPanel = () => {
         </NewsItem>
       ))}
       </NewsList>
+      </NewsPanelContainer>
     </>
   );
 };
 
+const NewsPanelContainer = styled.div`
+  // overflow-x: scroll;
+  // white-space: nowrap;
+  `;
+
 const NewsList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  `
+  `;
 
 const NewsItem = styled.div`
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-`
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 10px;
+    // width: calc(33.33% - 120px);
+    width: 250px;
+    overflow: hidden;
+
+    a {
+      display: block;
+      overflow: hidden;
+      height: 200px;
+    }
+
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+
+    h3 {
+      word-wrap: break-word;
+    }
+
+    @media (max-width: 768px) {
+      width: calc(50% - 20px);
+    }
+`;
+
+// const NewsItem = styled.div`
+//   margin: 10px;
+//   padding: 10px;
+//   background: black;
+//   color: white;
+//   flex: 0 0 auto;
+//   width: 400px;
+// `;
 
 
 // const NavHeader = styled.h2`
