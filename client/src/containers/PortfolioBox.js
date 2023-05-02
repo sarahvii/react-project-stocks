@@ -9,19 +9,16 @@ import styled from "styled-components";
 const PortfolioBox = ({portfolioStocks, selectedStock, setSelectedStock}) => {
     return ( 
         <PortfolioContainer>
-        <>
-            <p>PortfolioBox</p>
+
             <Nav></Nav>
             <Search></Search>
             <PieChart></PieChart>
-            <NewsPanel></NewsPanel>
+
             <StockList portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}></StockList>
 
 
+            <NewsPanel></NewsPanel>
 
-            <hr></hr>
-
-        </>
         </PortfolioContainer>
      );
 }

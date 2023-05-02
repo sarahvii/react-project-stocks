@@ -8,8 +8,6 @@ import styled from "styled-components";
 
 const HomeBox = ({}) => {
 
-
-
     return ( 
         <HomeContainer>
             <>
