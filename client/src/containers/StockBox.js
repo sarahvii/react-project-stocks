@@ -22,27 +22,16 @@ const StockBox = ({ selectedStock, globalSelectedStockData, addStock }) => {
 
   return (
     <StockContainer>
-    <>
-      <h3>StockBox</h3>
-      {selectedStock.name}
       <Nav />
       <Search />
+
+      <h2>Stock Box</h2>
+      <h3>{selectedStock.name}</h3>
+
       <StockChart />
+ 
       <BuyPanel selectedStock={selectedStock} addStock={addStock}/>
       <NewsPanel />
-      {error ? (
-        <p>Error: {error.message}</p>
-        ) : (
-        <p>
-            Price:{' '}
-            {globalSelectedStockData && globalSelectedStockData['Global Quote'] && globalSelectedStockData['Global Quote']['05. price']}
-            Change:{' '}
-            {globalSelectedStockData && globalSelectedStockData['Global Quote'] && globalSelectedStockData['Global Quote']['10. change percent']}
-
-        </p>
-      )}
-      <hr />
-    </>
     </StockContainer>
   );
 };
