@@ -24,22 +24,22 @@ db.stocks.insertMany(
   holdings: 60,
   price_purchased: 231.73,
 },
-{
-  name: 'NetEase, Inc.',
-  symbol: 'NTES',
-  date_purchased: '7/8/2022',
-  holdings: 80,
-  price_purchased: 87.79,
+// {
+//   name: 'NetEase, Inc.',
+//   symbol: 'NTES',
+//   date_purchased: '7/8/2022',
+//   holdings: 80,
+//   price_purchased: 87.79,
   
-},
-{
-  name: 'Electronic Arts Inc.',
-  symbol: 'EA',
-  date_purchased: '8/9/2022',
-  holdings: 80,
-  price_purchased: 126.73,
-},]
-);
+// },
+// {
+//   name: 'Electronic Arts Inc.',
+//   symbol: 'EA',
+//   date_purchased: '8/9/2022',
+//   holdings: 80,
+//   price_purchased: 126.73,
+// },]
+]);
 
 
 
