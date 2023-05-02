@@ -30,7 +30,7 @@ const Search = () => {
     console.log('Filtered symbols:', filteredSymbols);
   };
 
-  const filteredSymbols = symbolNames.filter(([symbol, name]) =>
+    const filteredSymbols = symbolNames.filter(([symbol, name]) =>
     name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -44,7 +44,7 @@ const Search = () => {
 
   return (
     <div>
-      <h1>FilteredSearch.js</h1>
+      <h1>Search.js</h1>
       <p>Filter by company name:</p>
 
       {!showModal ? (
