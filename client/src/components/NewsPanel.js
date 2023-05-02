@@ -33,7 +33,7 @@ const NewsPanel = () => {
   return (
     <>
     <NewsPanelContainer>
-      <h1>News</h1>
+      {/* <h1>News</h1> */}
       {/* <button onClick={handleGetNews}>Fetch</button> */}
       <NewsList>
       {data.map((item, idx) => (
@@ -49,9 +49,9 @@ const NewsPanel = () => {
               height='300'
             />
           </a>
-          <p>Summary: {item.summary}</p>
+          <p>{item.summary}</p>
           {/* <p>{JSON.stringify(item.ticker_sentiment)}</p> */}
-          <p>Authors: {item.authors}</p>
+          {/* <p>Authors: {item.authors}</p> */}
         </NewsItem>
       ))}
       </NewsList>
@@ -95,6 +95,13 @@ const NewsItem = styled.div`
 
     h3 {
       word-wrap: break-word;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.2s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1;
     }
 
     @media (max-width: 768px) {
