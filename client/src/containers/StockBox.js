@@ -3,8 +3,10 @@ import Nav from '../components/Nav';
 import Search from '../components/Search';
 import BuyPanel from '../components/BuyPanel';
 import NewsPanel from '../components/NewsPanel';
+
 import StockChart from  '../components/StockChart'
 import styled from 'styled-components';
+
 
 
 const StockBox = ({ selectedStock, globalSelectedStockData, addStock }) => {
@@ -24,6 +26,7 @@ const StockBox = ({ selectedStock, globalSelectedStockData, addStock }) => {
     <StockContainer>
       <Nav />
       <Search />
+
 
       <h2>Stock Box</h2>
       <h3>{selectedStock.name}</h3>
