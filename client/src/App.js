@@ -38,7 +38,6 @@ function App() {
 
   return (
     <AppContainer className="App">
-      <AppName>App</AppName>
       <Routes>
           <Route exact path="/" element={<HomeBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>} />
           <Route path="/portfolio" element={<PortfolioBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>} />
@@ -54,10 +53,6 @@ const AppContainer = styled.div`
   justify-content: center;
   align-items: center;
   align-content: space-around;
-`
-
-const AppName = styled.h1`
-  text-align: center;
 `
 
 export default App;
