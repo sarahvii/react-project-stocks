@@ -9,7 +9,7 @@ const symbolNames = [
   ['NFLX', 'Netflix'],
 ];
 
-const Search = () => {
+const FilteredSearch = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showModal, setShowModal] = useState(false);
 
@@ -85,7 +85,7 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default FilteredSearch;
 
 // import { useState } from 'react';
 
