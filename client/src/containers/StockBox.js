@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 import Nav from '../components/Nav';
-import Chart from '../components/Chart';
 import Search from '../components/Search';
 import BuyPanel from '../components/BuyPanel';
 import NewsPanel from '../components/NewsPanel';
+import StockChart from '../components/StockChart';
 
 
 const StockBox = ({ selectedStock, globalSelectedStockData, addStock }) => {
@@ -26,7 +26,7 @@ const StockBox = ({ selectedStock, globalSelectedStockData, addStock }) => {
       {selectedStock.name}
       <Nav />
       <Search />
-      <Chart />
+      <StockChart />
       <BuyPanel selectedStock={selectedStock} addStock={addStock}/>
       <NewsPanel />
       {error ? (
