@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 
 const Nav = () => {
     return ( 
+        <>
+        <h2>UNITY TRADING // This is the navbar</h2>
         <ul>
             <li>
                 <Link to="/">Home</Link>
@@ -14,6 +16,7 @@ const Nav = () => {
                 <Link to="/stocks">Stocks</Link>
             </li>
         </ul>
+        </>
     );
 }
  

@@ -13,12 +13,10 @@ const HomeBox = ({}) => {
     return ( 
         <HomeContainer>
             <>
-            <p>Homebox</p>
             <Nav></Nav>
             <Search></Search>
             <HomeChart></HomeChart>
             <NewsPanel></NewsPanel>
-            <hr></hr>
             </>
         </HomeContainer>
      );

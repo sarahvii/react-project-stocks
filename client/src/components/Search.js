@@ -44,7 +44,7 @@ const Search = () => {
 
   return (
     <div>
-      <h1>FilteredSearch.js</h1>
+      <h2>This is the filtered search bar.</h2>
       <p>Filter by company name:</p>
 
       {!showModal ? (

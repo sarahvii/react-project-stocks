@@ -1,6 +1,6 @@
 const NewsPanel = () => {
     return ( 
-        <p>NewsPanel</p>
+        <p>This is the news panel</p>
      );
 }
  
