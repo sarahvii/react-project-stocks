@@ -1,5 +1,4 @@
 import Nav from "../components/Nav";
-import Chart from "../components/Chart";
 import Search from "../components/Search";
 import NewsPanel from "../components/NewsPanel";
 import StockList from "../components/StockList";
