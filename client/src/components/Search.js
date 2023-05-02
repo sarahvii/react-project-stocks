@@ -30,7 +30,7 @@ const Search = () => {
     console.log('Filtered symbols:', filteredSymbols);
   };
 
-  const filteredSymbols = symbolNames.filter(([symbol, name]) =>
+    const filteredSymbols = symbolNames.filter(([symbol, name]) =>
     name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
