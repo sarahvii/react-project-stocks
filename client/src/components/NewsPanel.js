@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
 const NewsPanel = () => {
   const [data, setData] = useState([]);
@@ -32,9 +33,10 @@ const NewsPanel = () => {
   return (
     <>
       <h1>News</h1>
-      <button onClick={handleGetNews}>Fetch</button>
+      {/* <button onClick={handleGetNews}>Fetch</button> */}
+      <NewsList>
       {data.map((item, idx) => (
-        <div key={idx}>
+        <NewsItem key={idx}>
           <h3>{item.title}</h3>
           <h5>Sentiment: {item.overall_sentiment_label}</h5>
           <h5>Sentiment Score: {item.overall_sentiment_score}</h5>
@@ -49,10 +51,54 @@ const NewsPanel = () => {
           <p>Summary: {item.summary}</p>
           {/* <p>{JSON.stringify(item.ticker_sentiment)}</p> */}
           <p>Authors: {item.authors}</p>
-        </div>
+        </NewsItem>
       ))}
+      </NewsList>
     </>
   );
 };
+
+const NewsList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  `
+
+const NewsItem = styled.div`
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+`
+
+
+// const NavHeader = styled.h2`
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 0px 50px;
+//     box-shadow: 0 1px 8px #ddd;
+// `
+
+// const NavLinks = styled.ul`
+//     display: flex;
+//     justify-content: space-between;
+//     list-style: none;
+//     padding: 20px;
+// `
+
+// const NavListItems = styled.li`
+//     display: inline-block;
+//     justify-content: space-between;
+//     padding: 20px;
+// `
+
+// const NavLink = styled(Link)`
+//     text-decoration: none;
+//     color: #555;
+//     transition: all 0.3s ease 0s;
+
+//     &:hover {
+//         color: #b2dfdb;
+//     }
+//     `
 
 export default NewsPanel;

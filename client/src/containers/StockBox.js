@@ -44,7 +44,7 @@ const StockContainer = styled.div`
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: center;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
