@@ -6,6 +6,17 @@ const PortfolioStocksService =  {
       .then(res => res.json());
   },
 
+  async fetchOneStockApi (stockSymbol) {
+    const API_KEY = process.env.REACT_APP_ALPHA_KEY;
+    let StockSymbol = stockSymbol;
+    let API_Call = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${StockSymbol}&outputsize=compact&apikey=${API_KEY}`;
+  
+    const response = await fetch(API_Call);
+    const data = await response.json();
+    console.log(data);
+    return data
+  },
+
   addPortfolioStock(stock) {
     return fetch(baseURL, {
       method: 'POST',

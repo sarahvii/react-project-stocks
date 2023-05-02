@@ -1,6 +1,23 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import PortfolioStocksService from '../PortfolioStocksServices'
 
-const StockItem = ({portfolioStock, selectedStock, setSelectedStock, currentPrice}) => {
+const StockItem = ({portfolioStock, selectedStock, setSelectedStock}) => {
+
+    const [currentPrice, setCurrentPrice] = useState(0)
+
+    const fetchPrice = async () => {
+        const singleStockData = await PortfolioStocksService.fetchOneStockApi(portfolioStock.symbol)
+        const priceToSet = singleStockData["Global Quote"]["05. price"]
+        setCurrentPrice(priceToSet)
+    }
+    
+    useEffect(()=> {
+        fetchPrice()
+    }, [])
+
+
+
     console.log("Portfolio stock in StockItem:", portfolioStock);
 
     const handleClick = (portfolioStock) => {

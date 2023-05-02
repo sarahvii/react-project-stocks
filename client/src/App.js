@@ -33,26 +33,13 @@ function App() {
   }
 
 
-
-//this is just a test api, to be replaced by actual api call
-  const fetchGlobalSelectedStockData = useCallback((symbol) => {
-    console.log(`Fetching global quote data for ${symbol}...`);
-    // make an api call to get a global quote data for a selected stock
-    fetch(`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=W4GLD4HSOZYR7CTU`)
-      .then(response => response.json())
-      .then(data => {
-        setGlobalSelectedStockData(data);
-        console.log(`Global quote data for ${symbol}:`, data);
-      });
-  }, []);
-
   return (
     <div className="App">
       <h1>App</h1>
       <Routes>
           <Route exact path="/" element={<HomeBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>} />
           <Route path="/portfolio" element={<PortfolioBox portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}/>} />
-          <Route path="/stocks" element={<StockBox selectedStock={selectedStock} globalSelectedStockData={globalSelectedStockData} fetchGlobalSelectedStockData={fetchGlobalSelectedStockData} setGlobalSelectedStockData={setGlobalSelectedStockData} addStock={addStock}/>} />
+          <Route path="/stocks" element={<StockBox selectedStock={selectedStock} addStock={addStock}/>} />
       </Routes>
     </div>
   );
