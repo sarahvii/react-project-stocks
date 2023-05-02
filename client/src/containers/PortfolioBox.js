@@ -1,13 +1,14 @@
 import Nav from "../components/Nav";
-import Chart from "../components/Chart";
 import Search from "../components/Search";
 import NewsPanel from "../components/NewsPanel";
 import PieChart from "../components/PieChart";
 import StockList from "../components/StockList";
 import StockItem from "../components/StockItem";
+import styled from "styled-components";
 
 const PortfolioBox = ({portfolioStocks, selectedStock, setSelectedStock}) => {
     return ( 
+        <PortfolioContainer>
         <>
             <p>PortfolioBox</p>
             <Nav></Nav>
@@ -21,7 +22,20 @@ const PortfolioBox = ({portfolioStocks, selectedStock, setSelectedStock}) => {
             <hr></hr>
 
         </>
+        </PortfolioContainer>
      );
 }
+
+const PortfolioContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    margin: 10;
+`
  
 export default PortfolioBox;
