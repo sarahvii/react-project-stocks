@@ -44,7 +44,7 @@ const Search = () => {
 
   return (
     <div>
-      <h1>FilteredSearch.js</h1>
+      <h1>Search.js</h1>
       <p>Filter by company name:</p>
 
       {!showModal ? (
