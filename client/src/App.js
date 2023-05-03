@@ -54,7 +54,7 @@ const AppContainer = styled.div`
   justify-content: center;
   align-items: center;
   align-content: space-around;
-  margin: 0;
+  margin: 20;
   padding: 0;
   font-family: Manrope;
 `
