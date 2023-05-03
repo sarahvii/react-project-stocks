@@ -7,7 +7,7 @@ const Nav = () => {
 
 
                 <NavHeader>
-                    <h2>UNITY TRADING</h2>
+                    <h2>Broken Broker</h2>
                     <NavLinks>
                         <NavListItems>
                     <NavLink to="/">Home</NavLink>

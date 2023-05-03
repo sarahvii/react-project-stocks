@@ -48,9 +48,9 @@ const HomeChart = () => {
   }, []);
 
   const options = {
-    title: {
-      text: 'Stock Prices',
-    },
+    // title: {
+    //   text: 'Stock Prices',
+    // },
     rangeSelector: {
       selected: 1,
     },
@@ -79,9 +79,9 @@ const HomeChart = () => {
 
   return (
     <>
-      <h1>StockCombined.js</h1>
+      <h2>Market Performance</h2>
 
-      <button onClick={fetchData}>Fetch Data</button>
+      {/* <button onClick={fetchData}>Fetch Data</button> */}
       <HighchartsReact
         highcharts={Highcharts}
         options={options}
