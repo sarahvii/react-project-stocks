@@ -1,6 +1,7 @@
 // db data
 
 import { useState, useEffect } from 'react';
+import './Search.css';
 
 const symbolNames = [];
 
