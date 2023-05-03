@@ -14,7 +14,7 @@ const HomeChart = () => {
   ];
 
   const fetchData = async () => {
-    const API_KEY = 'SQFHJEETBG9RZHNR';
+    const API_KEY = process.env.REACT_APP_ALPHA_KEY;
     const baseUrl = 'https://www.alphavantage.co/query?function=';
 
     const fetchedData = await Promise.all(
