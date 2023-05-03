@@ -53,8 +53,15 @@ const StockItem = ({portfolioStock, selectedStock, setSelectedStock}) => {
 
     return ( 
         <>
-         <Link to="/stocks"><span onClick={()=>handleClick(portfolioStock)}>{portfolioStock.name}</span></Link><span> <span>_/_ ${holdingsValue.toFixed(2)}</span></span>
-        <p>{portfolioStock.symbol} {portfolioStock.holdings} Shares  ${profit_or_loss.toFixed(2)} ({percentage_diff.toFixed(2)}%)</p>
+        <ul>
+         <li><Link to="/stocks"><span onClick={()=>handleClick(portfolioStock)}>{portfolioStock.name}</span></Link></li><li>_/_ ${holdingsValue.toFixed(2)}</li>
+         </ul>
+        <ul>
+        <li><p>{portfolioStock.symbol}</p></li>
+        <li><p>Holdings: {portfolioStock.holdings}</p></li>
+        <li><p>Shares  ${profit_or_loss.toFixed(2)}</p></li>
+        <li><p>({percentage_diff.toFixed(2)}%)</p></li>
+        </ul>
         </>
 
 

@@ -29,7 +29,9 @@ const HomeContainer = styled.div`
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
-    margin: 10;
+    margin: 5;
+    color: black;
+    background-color: white;
 `
  
 export default HomeBox;

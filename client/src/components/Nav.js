@@ -1,23 +1,60 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import styled from "styled-components";
 
 const Nav = () => {
     return ( 
-        <>
-        <h2>TRADING APP // This is the navbar</h2>
-        <ul>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-            <li>
-                <Link to="/portfolio">Portfolio</Link>
-            </li>
-            <li>
-                <Link to="/stocks">Stocks</Link>
-            </li>
-        </ul>
-        </>
+
+
+                <NavHeader>
+                    <h2>UNITY TRADING</h2>
+                    <NavLinks>
+                        <NavListItems>
+                    <NavLink to="/">Home</NavLink>
+                        </NavListItems>
+                        <NavListItems>
+                    <NavLink to="/portfolio">Portfolio</NavLink>
+                        </NavListItems>
+                        <NavListItems>
+                    <NavLink to="/stocks">Stocks</NavLink>
+                        </NavListItems>
+                    </NavLinks>
+                </NavHeader>
+
     );
 }
+
+
+const NavHeader = styled.h2`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    box-shadow: 0 1px 8px #ddd;
+`
+
+const NavLinks = styled.ul`
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0px;
+`
+
+const NavListItems = styled.li`
+    display: inline-block;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 20px;
+`
+
+const NavLink = styled(Link)`
+    text-decoration: none;
+    color: #555;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        color: #b2dfdb;
+    }
+    `
  
 export default Nav;

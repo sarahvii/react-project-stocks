@@ -6,6 +6,7 @@ import PortfolioBox from './containers/PortfolioBox';
 import StockBox from './containers/StockBox';
 import PortfolioStocksService from './PortfolioStocksServices';
 import styled from 'styled-components';
+import './App.css';
 
 
 
@@ -53,6 +54,9 @@ const AppContainer = styled.div`
   justify-content: center;
   align-items: center;
   align-content: space-around;
+  margin: 20;
+  padding: 0;
+  font-family: Manrope;
 `
 
 export default App;
