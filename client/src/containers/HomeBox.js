@@ -12,7 +12,7 @@ const HomeBox = ({}) => {
         <HomeContainer>
             <>
             <Nav></Nav>
-            <Search></Search>
+            {/* <Search></Search> */}
             <HomeChart></HomeChart>
             <NewsPanel></NewsPanel>
             </>

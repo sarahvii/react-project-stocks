@@ -11,7 +11,7 @@ const PortfolioBox = ({portfolioStocks, selectedStock, setSelectedStock}) => {
         <PortfolioContainer>
 
             <Nav></Nav>
-            <Search></Search>
+            {/* <Search></Search> */}
             <PieChart></PieChart>
             {/* <StockListContainer> */}
             <StockList portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}></StockList>

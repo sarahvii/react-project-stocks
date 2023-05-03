@@ -125,7 +125,7 @@ const StockChartAll = () => {
 
   return (
     <>
-      <h1>StockCombined.js</h1>
+      <h2>Your Portfolio Performance</h2>
 
       <button onClick={fetchData}>Fetch Data</button>
       <HighchartsReact

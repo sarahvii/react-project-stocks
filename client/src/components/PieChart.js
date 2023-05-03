@@ -56,7 +56,7 @@ const PieChart = () => {
 
   return (
     <div style={{ maxWidth: '80%', margin: '4rem' }}>
-      <h1>HighChartsStock.js</h1>
+      <h1>Portfolio Performance</h1>
 
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
