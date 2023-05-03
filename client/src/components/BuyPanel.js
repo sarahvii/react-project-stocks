@@ -18,7 +18,7 @@ const BuyPanel = ({ selectedStock, addStock }) => {
 
     return (
         <>
-        <p>This is the buy panel</p>
+        <h3>Buy new stock</h3>
         <form id="buy_form" onSubmit={handleSubmit}>
             <label>Amount to buy:
                 <input 
