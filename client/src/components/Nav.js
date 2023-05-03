@@ -37,13 +37,14 @@ const NavLinks = styled.ul`
     display: flex;
     justify-content: space-between;
     list-style: none;
-    padding: 20px;
+    padding: 0px;
 `
 
 const NavListItems = styled.li`
     display: inline-block;
     justify-content: space-between;
-    padding: 20px;
+    padding: 0px;
+    margin: 20px;
 `
 
 const NavLink = styled(Link)`

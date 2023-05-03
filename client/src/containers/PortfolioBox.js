@@ -13,11 +13,14 @@ const PortfolioBox = ({portfolioStocks, selectedStock, setSelectedStock}) => {
             <Nav></Nav>
             <Search></Search>
             <PieChart></PieChart>
-
+            {/* <StockListContainer> */}
             <StockList portfolioStocks={portfolioStocks} selectedStock={selectedStock} setSelectedStock={setSelectedStock}></StockList>
+            {/* </StockListContainer> */}
 
 
-            <NewsPanel></NewsPanel>
+            {/* <NewsPanelContainer> */}
+                <NewsPanel></NewsPanel>
+            {/* </NewsPanelContainer> */}
 
         </PortfolioContainer>
      );
@@ -34,5 +37,13 @@ const PortfolioContainer = styled.div`
     flex-basis: auto;
     margin: 10;
 `
+
+// const StockListContainer = styled.div`
+//     width: 60%;
+//     `
+
+// const NewsPanelContainer = styled.div`
+//     width: 40%;
+// `
  
 export default PortfolioBox;
