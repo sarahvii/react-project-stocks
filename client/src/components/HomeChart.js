@@ -127,7 +127,7 @@ const HomeChart = () => {
     <>
       <h2>Market Performance</h2>
 
-      {/* <button onClick={fetchData}>Fetch Data</button> */}
+      <button onClick={fetchData}>Fetch Data</button>
       <HighchartsReact
         highcharts={Highcharts}
         options={options}

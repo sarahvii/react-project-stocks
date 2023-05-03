@@ -28,7 +28,7 @@ const StockBox = ({ selectedStock, globalSelectedStockData, addStock }) => {
       <Search />
 
 
-      <h2>Stock Box</h2>
+      {/* <h2>Stock Box</h2> */}
       <h3>{selectedStock.name}</h3>
 
       <StockChart />

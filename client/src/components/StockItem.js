@@ -54,7 +54,7 @@ const StockItem = ({portfolioStock, selectedStock, setSelectedStock}) => {
     return ( 
         <>
         <ul>
-         <li><Link to="/stocks"><span onClick={()=>handleClick(portfolioStock)}>{portfolioStock.name}</span></Link></li><li>_/_ ${holdingsValue.toFixed(2)}</li>
+         <li><Link to="/stocks"><span onClick={()=>handleClick(portfolioStock)}>{portfolioStock.name}</span></Link></li><li>${holdingsValue.toFixed(2)}</li>
          </ul>
         <ul>
         <li><p>{portfolioStock.symbol}</p></li>
