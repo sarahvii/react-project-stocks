@@ -74,8 +74,8 @@ const FilteredSearch = () => {
 
   return (
     <div>
-      <h1>FilteredSearchDB.js</h1>
-      <p>Filter by company name:</p>
+      {/* <h1>FilteredSearchDB.js</h1>
+      <p>Filter by company name:</p> */}
 
       {!showModal ? (
         <button type='button' onClick={handleShowModal}>
