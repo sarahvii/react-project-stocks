@@ -202,9 +202,9 @@ const PortfolioChart = () => {
 
   return (
     <>
-      {/* <h1>StockChart.js</h1> */}
+      <h1>StockChart.js</h1>
 
-      <label htmlFor='symbol-select'>Select stock: </label>
+      <label htmlFor='symbol-select'>Select Symbol: </label>
       <select
         id='symbol-select'
         value={stockSymbol}

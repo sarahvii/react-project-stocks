@@ -71,7 +71,7 @@ function Stock() {
         Stock Symbol:
         <input type='text' value={stockSymbol} onChange={handleInputChange} />
       </label> */}
-      <label htmlFor='symbol-select'>Select Stock: </label>
+      <label htmlFor='symbol-select'>Select Symbol: </label>
       <select
         id='symbol-select'
         value={stockSymbol}
